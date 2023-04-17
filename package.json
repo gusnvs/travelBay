@@ -6,11 +6,14 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node server/server.js"
+    "server": "node server/server.js",
+    "client": "npm run start --prefix client",
+    "app": "concurrently npm \"npm run server\" \"npm run client\""
   },
   "author": "Gustavo Neves",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.4",
     "bcryptjs": "^2.4.3",
     "concurrently": "^8.0.1",
     "dotenv": "^16.0.3",

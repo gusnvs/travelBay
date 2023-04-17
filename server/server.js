@@ -2,8 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 import db from './db.js';
 import express from 'express';
-
-// Nossa rotas
+import blogPostRoutes from './routes/blogPostRoutes.js'
 
 db();
 
@@ -15,6 +14,8 @@ app.use(express.json({
     }),
     limit: '50mb'
 }));
+
+app.use('/api/blog-posts', blogPostRoutes);
 
 const port = process.env.PORT || 5000;
 
